@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "release:patch:ngx-simple-store": "pnpm --filter @touhidrahman/ngx-simple-store exec pnpm version patch && pnpm build ngx-simple-store && git push && git push --tags",
+    "release:minor:ngx-simple-store": "pnpm --filter @touhidrahman/ngx-simple-store exec pnpm version minor && pnpm build ngx-simple-store && git push && git push --tags",
+    "release:major:ngx-simple-store": "pnpm --filter @touhidrahman/ngx-simple-store exec pnpm version major && pnpm build ngx-simple-store && git push && git push --tags",
+    "ship:ngx-simple-store": "cd dist/ngx-simple-store && pnpm publish --access public"
   },
   "prettier": {
     "printWidth": 100,

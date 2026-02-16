@@ -1,2 +1,4 @@
 onlyBuiltDependencies:
   - '@touhidrahman/simple-store'
+packages:
+  - 'projects/*'
