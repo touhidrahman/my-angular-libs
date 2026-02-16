@@ -1,6 +1,8 @@
 {
   "name": "my-angular-libs",
   "version": "0.0.0",
+  "author": "Touhid Rahman <hello@touhidrahman.me>",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
