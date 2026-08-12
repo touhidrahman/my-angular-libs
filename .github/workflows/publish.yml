@@ -17,13 +17,17 @@ jobs:
         steps:
             - uses: actions/checkout@v6
 
+            - uses: pnpm/action-setup@v4
+              with:
+                  version: 11.13.1
+
             - uses: actions/setup-node@v6
               with:
                   node-version: 24
                   registry-url: 'https://registry.npmjs.org'
-                  cache: npm
+                  cache: pnpm
 
-            - run: npm ci
+            - run: pnpm install --frozen-lockfile
 
             - name: Select package
               id: pkg
@@ -31,13 +35,13 @@ jobs:
               run: |
                   if [[ "${GITHUB_REF_NAME}" == ngx-simple-store-v* ]]; then
                     echo "lib=ngx-simple-store" >> "$GITHUB_OUTPUT"
-                    echo "dist=dist/ngx-simple-store" >> "$GITHUB_OUTPUT"
+                    echo "dist=dist/libs/ngx-simple-store" >> "$GITHUB_OUTPUT"
                   elif [[ "${GITHUB_REF_NAME}" == ngx-common-v* ]]; then
                     echo "lib=ngx-common" >> "$GITHUB_OUTPUT"
-                    echo "dist=dist/ngx-common" >> "$GITHUB_OUTPUT"
+                    echo "dist=dist/libs/ngx-common" >> "$GITHUB_OUTPUT"
                   fi
 
-            - run: npx ng build ${{ steps.pkg.outputs.lib }}
+            - run: npx nx build ${{ steps.pkg.outputs.lib }}
 
             - run: npm install -g npm@latest
 

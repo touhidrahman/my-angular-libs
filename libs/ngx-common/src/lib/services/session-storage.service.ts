@@ -5,9 +5,9 @@ import { WA_SESSION_STORAGE } from '@ng-web-apis/common'
     providedIn: 'root',
 })
 export class SessionStorageService {
-   //note:: angular version mismatch giving type error
+    //note:: angular version mismatch giving type error
     private storage = inject(
-        WA_SESSION_STORAGE as unknown as InjectionToken<Storage>
+        WA_SESSION_STORAGE as unknown as InjectionToken<Storage>,
     )
 
     clear(): void {

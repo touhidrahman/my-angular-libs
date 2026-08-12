@@ -29,6 +29,10 @@ yarn-error.log
 !.vscode/mcp.json
 .history/*
 
+# Nx
+.nx/cache
+.nx/workspace-data
+
 # Miscellaneous
 /.angular/cache
 .sass-cache/

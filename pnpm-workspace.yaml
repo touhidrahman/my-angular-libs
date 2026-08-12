@@ -1,9 +1,15 @@
+packages:
+    - 'libs/*'
+
+autoInstallPeers: false
+
 allowBuilds:
-  '@parcel/watcher': true
-  esbuild: true
-  lefthook: true
-  lmdb: true
-  msgpackr-extract: true
+    '@parcel/watcher': true
+    esbuild: true
+    lefthook: true
+    lmdb: true
+    msgpackr-extract: true
+    nx: true
 minimumReleaseAgeExclude:
   - '@angular-devkit/architect@0.2200.7'
   - '@angular-devkit/core@22.0.7'
@@ -20,5 +26,3 @@ minimumReleaseAgeExclude:
   - '@angular/router@22.0.7'
 onlyBuiltDependencies:
   - '@touhidrahman/simple-store'
-packages:
-  - 'projects/*'
