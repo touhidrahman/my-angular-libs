@@ -177,8 +177,16 @@ Converts a number of bytes into a human-readable format.
 Rounds a number up (`Math.ceil`).
 
 ```typescript
-{{ 4.2 | ceiling }}  // 5
-{{ -4.2 | ceiling }} // -4
+{
+    {
+        4.2 | ceiling
+    }
+} // 5
+{
+    {
+        ;-4.2 | ceiling
+    }
+} // -4
 ```
 
 ---
@@ -214,8 +222,16 @@ const items = [{ name: 'John' }, { name: 'Jane' }];
 Rounds a number down (`Math.floor`).
 
 ```typescript
-{{ 4.9 | floor }}  // 4
-{{ -4.9 | floor }} // -5
+{
+    {
+        4.9 | floor
+    }
+} // 4
+{
+    {
+        ;-4.9 | floor
+    }
+} // -5
 ```
 
 ---
@@ -225,8 +241,16 @@ Rounds a number down (`Math.floor`).
 Returns the first character of a string, uppercased.
 
 ```typescript
-{{ 'john' | initialName }} // "J"
-{{ '' | initialName }}     // ""
+{
+    {
+        'john' | initialName
+    }
+} // "J"
+{
+    {
+        '' | initialName
+    }
+} // ""
 ```
 
 ---
@@ -236,8 +260,16 @@ Returns the first character of a string, uppercased.
 Checks if a filename has an image extension (`jpg`, `jpeg`, `png`, `gif`, `bmp`, `svg`, `webp`).
 
 ```typescript
-{{ 'photo.jpg' | isImage }}     // true
-{{ 'document.pdf' | isImage }}  // false
+{
+    {
+        'photo.jpg' | isImage
+    }
+} // true
+{
+    {
+        'document.pdf' | isImage
+    }
+} // false
 ```
 
 ---
@@ -297,7 +329,11 @@ Useful for pagination:
 Converts a date into a relative time string.
 
 ```typescript
-{{ someDate | relativeTime }} // "just now", "5 minutes ago", "2 hours ago", "1 day ago", "recently"
+{
+    {
+        someDate | relativeTime
+    }
+} // "just now", "5 minutes ago", "2 hours ago", "1 day ago", "recently"
 ```
 
 Accepts ISO strings or `Date` objects.
@@ -370,7 +406,11 @@ Truncates a string to a character limit with ellipsis, optionally preserving who
 Capitalizes the first character of a string.
 
 ```typescript
-{{ 'hello world' | titlecase }} // "Hello world"
+{
+    {
+        'hello world' | titlecase
+    }
+} // "Hello world"
 ```
 
 ---
@@ -380,8 +420,16 @@ Capitalizes the first character of a string.
 Filters an array to unique values.
 
 ```typescript
-{{ [1, 2, 2, 3, 3, 3] | unique }} // [1, 2, 3]
-{{ ['a', 'b', 'a', 'c'] | unique }} // ['a', 'b', 'c']
+{
+    {
+        ;[1, 2, 2, 3, 3, 3] | unique
+    }
+} // [1, 2, 3]
+{
+    {
+        ;['a', 'b', 'a', 'c'] | unique
+    }
+} // ['a', 'b', 'c']
 ```
 
 ---
