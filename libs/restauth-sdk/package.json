@@ -6,6 +6,9 @@
         "type": "git",
         "url": "https://github.com/touhidrahman/my-angular-libs"
     },
+    "files": [
+        "src"
+    ],
     "type": "module",
     "main": "./src/index.js",
     "module": "./src/index.js",
@@ -16,7 +19,6 @@
             "import": "./src/index.js"
         }
     },
-    "files": ["src"],
     "publishConfig": {
         "access": "public"
     },
