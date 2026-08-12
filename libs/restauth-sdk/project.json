@@ -1,0 +1,22 @@
+{
+    "name": "restauth-sdk",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/restauth-sdk/src",
+    "projectType": "library",
+    "tags": [],
+    "targets": {
+        "build": {
+            "executor": "@nx/js:tsc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/libs/restauth-sdk",
+                "main": "libs/restauth-sdk/src/index.ts",
+                "tsConfig": "libs/restauth-sdk/tsconfig.lib.json",
+                "assets": [
+                    "libs/restauth-sdk/*.md",
+                    "libs/restauth-sdk/package.json"
+                ]
+            }
+        }
+    }
+}

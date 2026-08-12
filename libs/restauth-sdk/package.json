@@ -1,0 +1,27 @@
+{
+    "name": "@touhidrahman/restauth-sdk",
+    "version": "0.0.1",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/touhidrahman/my-angular-libs"
+    },
+    "type": "module",
+    "main": "./src/index.js",
+    "module": "./src/index.js",
+    "types": "./src/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./src/index.d.ts",
+            "import": "./src/index.js"
+        }
+    },
+    "files": ["src"],
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@hey-api/client-fetch": "0.13.1",
+        "tslib": "^2.3.0"
+    }
+}

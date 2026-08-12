@@ -20,13 +20,17 @@
         "@angular/build:unit-test": {
             "cache": true,
             "inputs": ["default", "^production"]
+        },
+        "@nx/js:tsc": {
+            "cache": true,
+            "dependsOn": ["^build"],
+            "inputs": ["production", "^production"]
         }
     },
     "workspaceLayout": {
         "appsDir": "apps",
         "libsDir": "libs"
     },
-    "packageManager": "pnpm",
     "analytics": false,
     "neverConnectToCloud": true
 }

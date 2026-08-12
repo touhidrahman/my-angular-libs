@@ -5,6 +5,8 @@ on:
         tags:
             - 'ngx-simple-store-v*'
             - 'ngx-common-v*'
+            - 'restauth-sdk-v*'
+            - 'auditlog-sdk-v*'
 
 permissions:
     contents: read
@@ -39,6 +41,12 @@ jobs:
                   elif [[ "${GITHUB_REF_NAME}" == ngx-common-v* ]]; then
                     echo "lib=ngx-common" >> "$GITHUB_OUTPUT"
                     echo "dist=dist/libs/ngx-common" >> "$GITHUB_OUTPUT"
+                  elif [[ "${GITHUB_REF_NAME}" == restauth-sdk-v* ]]; then
+                    echo "lib=restauth-sdk" >> "$GITHUB_OUTPUT"
+                    echo "dist=dist/libs/restauth-sdk" >> "$GITHUB_OUTPUT"
+                  elif [[ "${GITHUB_REF_NAME}" == auditlog-sdk-v* ]]; then
+                    echo "lib=auditlog-sdk" >> "$GITHUB_OUTPUT"
+                    echo "dist=dist/libs/auditlog-sdk" >> "$GITHUB_OUTPUT"
                   fi
 
             - run: npx nx build ${{ steps.pkg.outputs.lib }}
