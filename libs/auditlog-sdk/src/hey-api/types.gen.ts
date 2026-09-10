@@ -470,6 +470,8 @@ export type GetLogsData = {
         creatorId?: string | null
         creatorName?: string | null
         projectId?: string
+        referenceName?: string | null
+        referenceId?: string | null
         action?: 'create' | 'update' | 'delete'
         previousData?:
             | string
@@ -515,6 +517,8 @@ export type GetLogsResponses = {
             creatorId?: string | null
             creatorName?: string | null
             projectId?: string
+            referenceName?: string | null
+            referenceId?: string | null
             action?: 'create' | 'update' | 'delete'
             previousData?:
                 | string
@@ -563,6 +567,8 @@ export type PostLogsData = {
         creatorId?: string | null
         creatorName?: string | null
         projectId: string
+        referenceName?: string | null
+        referenceId?: string | null
         action: 'create' | 'update' | 'delete'
         previousData?:
             | string
@@ -631,6 +637,8 @@ export type PostLogsResponses = {
             creatorId?: string | null
             creatorName?: string | null
             projectId?: string
+            referenceName?: string | null
+            referenceId?: string | null
             action?: 'create' | 'update' | 'delete'
             previousData?:
                 | string
@@ -672,6 +680,8 @@ export type GetLogsExportCsvData = {
         creatorId?: string | null
         creatorName?: string | null
         projectId?: string
+        referenceName?: string | null
+        referenceId?: string | null
         action?: 'create' | 'update' | 'delete'
         previousData?:
             | string
@@ -809,6 +819,8 @@ export type GetLogsIdResponses = {
             creatorId?: string | null
             creatorName?: string | null
             projectId?: string
+            referenceName?: string | null
+            referenceId?: string | null
             action?: 'create' | 'update' | 'delete'
             previousData?:
                 | string
