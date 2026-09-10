@@ -7,17 +7,12 @@
     "targets": {
         "build": {
             "executor": "@nx/rollup:rollup",
-            "outputs": [
-                "{options.outputPath}"
-            ],
+            "outputs": ["{options.outputPath}"],
             "options": {
                 "outputPath": "dist/libs/restauth-sdk",
                 "tsConfig": "libs/restauth-sdk/tsconfig.lib.json",
                 "main": "libs/restauth-sdk/src/index.ts",
-                "format": [
-                    "cjs",
-                    "esm"
-                ],
+                "format": ["cjs", "esm"],
                 "generatePackageJson": true,
                 "generateExportsField": true,
                 "assets": [
