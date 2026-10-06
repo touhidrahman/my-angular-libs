@@ -60,6 +60,7 @@
         "@nx/js": "23.2.1",
         "@nx/rollup": "23.2.1",
         "@tailwindcss/postcss": "^4.3.2",
+        "@types/dom-speech-recognition": "^0.0.12",
         "@types/node": "^26.0.0",
         "jsdom": "^29.1.1",
         "lefthook": "^2.1.17",
@@ -72,15 +73,15 @@
         "typescript": "~6.0.3",
         "vitest": "^4.1.10"
     },
-    "engines": {
-        "pnpm": "12.9.1"
-    },
     "devEngines": {
         "packageManager": {
             "name": "pnpm",
             "version": "12.9.1",
             "onFail": "download"
         }
+    },
+    "engines": {
+        "pnpm": "12.9.1"
     },
     "packageManager": "pnpm@12.9.1+sha512.06b055fff5cd20dc12781de173ced3310ce0951bf2ec620211a16045d5444d5c93a663210764ef29a653a610459ba0368f0e74f84d80c54723cf95aae7bc0d6d"
 }
