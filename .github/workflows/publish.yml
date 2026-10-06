@@ -44,6 +44,18 @@ jobs:
                     echo "dist=dist/libs/auditlog-sdk" >> "$GITHUB_OUTPUT"
                   fi
 
+            - name: Verify tag matches package version
+              shell: bash
+              run: |
+                  tag_version="${GITHUB_REF_NAME##*-v}"
+                  pkg_file="libs/${{ steps.pkg.outputs.lib }}/package.json"
+                  pkg_version="$(node -p "require('./${pkg_file}').version")"
+                  if [[ "$tag_version" != "$pkg_version" ]]; then
+                    echo "::error::Tag ${GITHUB_REF_NAME} specifies ${tag_version} but ${pkg_file} is ${pkg_version}. Bump the version before tagging."
+                    exit 1
+                  fi
+                  echo "Publishing ${pkg_version}"
+
             - run: pnpm nx build ${{ steps.pkg.outputs.lib }}
 
             - run: pnpm publish --access public --no-git-checks
