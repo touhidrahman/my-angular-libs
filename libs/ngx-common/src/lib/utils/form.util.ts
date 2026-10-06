@@ -35,3 +35,37 @@ export function markAllControlsAsDirty(
         }
     })
 }
+
+export function markAllControlsAsTouched(control: AbstractControl): void {
+    control.markAsTouched()
+    control.updateValueAndValidity()
+
+    if (control instanceof FormGroup || control instanceof FormArray) {
+        Object.values(control.controls).forEach((child) =>
+            markAllControlsAsTouched(child),
+        )
+    }
+}
+
+export function getMessageForCommonFormControlErrors(
+    control: AbstractControl,
+): string {
+    if (control.hasError('required')) {
+        return 'This field is required'
+    }
+    if (control.hasError('email')) {
+        return 'Please enter a valid email'
+    }
+    if (control.hasError('minlength')) {
+        const minLength = control.getError('minlength').requiredLength
+        return `Minimum ${minLength} characters required`
+    }
+    if (control.hasError('maxlength')) {
+        const maxLength = control.getError('maxlength').requiredLength
+        return `Maximum ${maxLength} characters allowed`
+    }
+    if (control.hasError('pattern')) {
+        return 'Please enter a valid value'
+    }
+    return ''
+}
