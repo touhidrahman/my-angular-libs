@@ -28,6 +28,35 @@ export type GetResponses = {
 
 export type GetResponse = GetResponses[keyof GetResponses]
 
+export type GetV1ListErrorCodesData = {
+    body?: never
+    path?: never
+    query?: never
+    url: '/v1/list-error-codes'
+}
+
+export type GetV1ListErrorCodesResponses = {
+    /**
+     * Full dictionary of RestAuth error codes
+     */
+    200: {
+        data: Array<{
+            code: string
+            key: string
+            status: number
+            message: string
+            description: string
+        }>
+        message: string
+        success: boolean
+        error?: unknown
+        meta?: unknown
+    }
+}
+
+export type GetV1ListErrorCodesResponse =
+    GetV1ListErrorCodesResponses[keyof GetV1ListErrorCodesResponses]
+
 export type PostAdminNewTokenData = {
     /**
      * Refresh token
@@ -3670,7 +3699,7 @@ export type PostUsersRegisterResponses = {
             projectId: string
             createdAt: Date | null
             updatedAt: Date | null
-            verifyToken: string
+            verifyToken: string | null
             group?: {
                 id: string
                 name: string
