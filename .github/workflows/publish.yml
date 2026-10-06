@@ -19,17 +19,12 @@ jobs:
         steps:
             - uses: actions/checkout@v7
 
-            - uses: pnpm/action-setup@v4
+            - name: Install Node & PNPM
+              uses: pnpm/setup@v3
               with:
-                  version: 11.13.1
-
-            - uses: actions/setup-node@v6
-              with:
-                  node-version: 24
-                  registry-url: 'https://registry.npmjs.org'
-                  cache: pnpm
-
-            - run: pnpm install --frozen-lockfile
+                  cache: true
+                  install: true
+                  require-lockfile: true
 
             - name: Select package
               id: pkg
@@ -49,9 +44,7 @@ jobs:
                     echo "dist=dist/libs/auditlog-sdk" >> "$GITHUB_OUTPUT"
                   fi
 
-            - run: npx nx build ${{ steps.pkg.outputs.lib }}
+            - run: pnpm nx build ${{ steps.pkg.outputs.lib }}
 
-            - run: npm install -g npm@latest
-
-            - run: npm publish --access public
+            - run: pnpm publish --access public --no-git-checks
               working-directory: ${{ steps.pkg.outputs.dist }}
