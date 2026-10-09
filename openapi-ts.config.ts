@@ -4,7 +4,7 @@ export default defineConfig([
     {
         input: 'https://auth-api.mattrika.com/openapi.json',
         output: {
-            path: './libs/restauth-sdk/src/hey-api',
+            path: './libs/restauth-sdk/src',
             postProcess: [],
         },
         plugins: [
@@ -26,7 +26,7 @@ export default defineConfig([
     {
         input: 'https://auditlog-api.mattrika.com/openapi.json',
         output: {
-            path: './libs/auditlog-sdk/src/hey-api',
+            path: './libs/auditlog-sdk/src',
             postProcess: [],
         },
         plugins: [

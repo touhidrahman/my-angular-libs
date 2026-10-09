@@ -215,6 +215,8 @@ import type {
     GetUsersMeData,
     GetUsersMeResponses,
     GetUsersResponses,
+    GetV1ListErrorCodesData,
+    GetV1ListErrorCodesResponses,
     PostAdminLoginData,
     PostAdminLoginResponses,
     PostAdminNewTokenData,
@@ -339,6 +341,15 @@ export const get = <ThrowOnError extends boolean = false>(
         url: '/',
         ...options,
     })
+
+export const getV1ListErrorCodes = <ThrowOnError extends boolean = false>(
+    options?: Options<GetV1ListErrorCodesData, ThrowOnError>,
+): RequestResult<GetV1ListErrorCodesResponses, unknown, ThrowOnError> =>
+    (options?.client ?? client).get<
+        GetV1ListErrorCodesResponses,
+        unknown,
+        ThrowOnError
+    >({ url: '/v1/list-error-codes', ...options })
 
 export const postAdminNewToken = <ThrowOnError extends boolean = false>(
     options: Options<PostAdminNewTokenData, ThrowOnError>,

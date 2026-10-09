@@ -499,6 +499,7 @@ export type GetLogsData = {
         sortOrder?: 'asc' | 'desc'
         page?: number
         size?: number
+        searchField?: string
         dateFrom?: string
         dateTo?: string
     }
@@ -709,6 +710,7 @@ export type GetLogsExportCsvData = {
         sortOrder?: 'asc' | 'desc'
         page?: number
         size?: number
+        searchField?: string
         dateFrom?: string
         dateTo?: string
     }
