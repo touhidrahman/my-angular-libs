@@ -32,5 +32,13 @@
         "libsDir": "libs"
     },
     "analytics": false,
-    "neverConnectToCloud": true
+    "neverConnectToCloud": true,
+    "plugins": [
+        {
+            "plugin": "@nx/oxlint",
+            "options": {
+                "targetName": "lint"
+            }
+        }
+    ]
 }

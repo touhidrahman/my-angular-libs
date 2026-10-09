@@ -53,6 +53,7 @@
         "@angular/compiler-cli": "^22.0.7",
         "@hey-api/openapi-ts": "0.99.0",
         "@nx/js": "23.3.0",
+        "@nx/oxlint": "23.3.0",
         "@nx/rollup": "23.3.0",
         "@tailwindcss/postcss": "^4.3.3",
         "@types/dom-speech-recognition": "^0.0.12",
